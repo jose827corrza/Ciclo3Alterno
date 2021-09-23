@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,56 +20,91 @@
     rel="stylesheet" 
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
     crossorigin="anonymous">
+<script  src="accionJS.js"></script>
+
+<!-- Libreria  Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+<!-- Productos Firebase a usar -->
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+<!-- Firebase Auth -->
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+
+
+
 </head>
 <body>
-    <h1 class="titulos"> Titulo Pagina</h1>
-    <!-- <br>
-    <input type="text" 
-        class="form_control"
-        id="email"
-        placeholder="example@example.com">
-    <input type="text"
-        class="form_control"
-        id="password"
-        placeholder="Password">
-        <br> -->
-    <main class="container mt-3">
-        <div class="row">
-            <div class=".col-6 col-sm-6">
-            <div class="mb-6 row">
-                <label class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                <input type="text"
-                        class="form-control"
-                        id="email"
-                        placeholder="email@example.com">
-                </div>
-            </div>
-            <div class="mb-6 row">
-                <label for="inputPassword"
-                        class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                <input type="password"
-                        class="form-control"
-                        id="password"
-                        placeholder="password">
-                </div>
-            </div>
-            <div class="col-auto">
-                <button type="submit"
-                        id="btn-login"
-                        class="btn btn-primary mb-3">Enviar</button>
-            </div>
-            </div>
-        </div>
-        </main>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand"
-                href="#">App</a>
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-    </nav>
-    <img src="000.JPG" alt="chatito" class="image">
+      </nav>
+    
+        <h1 class="titulos">DreamTeam Website</h1>
+    </div>
+
+    <form class="container-fluid">
+        <div class="form-group">
+            <div class="col-md-3 input-group-sm">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-1 mb-3 input-group-sm">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-sm" onclick="my()">Ingresar</button>
+      </form>
+    
+      
+    <div class="text-center">
+        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Perspiciatis, provident cupiditate ea laudantium ducimus odio? 
+            Officia, ab aspernatur, nesciunt fugiat cum quos voluptatem, 
+            nisi quaerat tenetur iste a consequuntur cupiditate.</p>
+    </div>
     
 
 </body>
