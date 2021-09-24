@@ -2,7 +2,7 @@
     text-align: center;
     font-size: xx-large;
     font-style: inherit;
-    color: magenta;
+    color:lightcoral;
 }
 .form_control{
     align-self: center;
@@ -11,3 +11,4 @@
     height: 10cm;
     width: 10cm;
 }
+
