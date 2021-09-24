@@ -26,9 +26,9 @@ async function loginProvider(provider) {
     }
 
 loginProvider(googleProvider);
-async function createWithEmailAndPassword(exampleInputEmail1, exampleInputPassword1){
+async function createWithEmailAndPassword(emailText, psswrd){
     try {
-        const response = await auth.createUserWithEmailAndPassword(email, password);
+        const response = await auth.createUserWithEmailAndPassword(emailText, psswrd);
         var user = firebase.auth().currentUser;
         console.log(user);
         console.log(response.user.exampleInputEmail1);
@@ -39,12 +39,12 @@ async function createWithEmailAndPassword(exampleInputEmail1, exampleInputPasswo
 createWithEmailAndPassword('prueba@email.com', '123456')
 
 // Login usuario email y password
-async function signInWithEmailAndPassword(email, password) {
+async function signInWithEmailAndPassword(emailText, psswrd) {
     try {
-      const response = await auth.signInWithEmailAndPassword(email, password);
+      const response = await auth.signInWithEmailAndPassword(emailText, psswrd);
       const user = firebase.auth().currentUser;
       console.log(user);
-      console.log(response.user.email);
+      console.log(response.user.emailText);
       actualStatusAuth()
     } catch (error) {
       throw new Error(error)
