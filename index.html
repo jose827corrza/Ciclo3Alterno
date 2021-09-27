@@ -1,111 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Inicial</title>
-    <link rel="stylesheet" href="styles.css">
-    <!--Aca van los meta datos-->
-    <html prefix="og: https://ogp.me/ns#">
-<head>
-<title>The Rock (1996)</title>
-<meta property="og:title" content="Wesite Ciclo3 MisionTIC" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jose827corrza.github.io/Ciclo3Alterno/" />
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" />
-<meta property="og:description" content="Esta es mi primera pagina"/>
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
-    crossorigin="anonymous">
-<script  src="accionJS.js"></script>
 
-<!-- Libreria  Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
-<!-- Productos Firebase a usar -->
-<!-- Firestore -->
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
-<!-- Firebase Auth -->
-<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Inicial</title>
+  <link rel="stylesheet" href="styles.css">
+  <!--Aca van los meta datos-->
+  <html prefix="og: https://ogp.me/ns#">
+
+
+  <!-- <title>The Rock (1996)</title> -->
+  <meta property="og:title" content="Wesbite Ciclo3 MisionTIC" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jose827corrza.github.io/Ciclo3Alterno/" />
+  <meta property="og:image"
+    content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" />
+  <meta property="og:description" content="Pagina principal equipo DreamTeam" />
+  <!-- CSS only -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+
+
+
+  <!-- Libreria  Firebase -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script> -->
+  <!-- Productos Firebase a usar -->
+  <!-- Firestore -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script> -->
+  <!-- Firebase Auth -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script> -->
 
 
 
 </head>
+
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+  <!-- Carga Cutom JS -->
+  <script type="module" src="accionJS.js"></script>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">DreamTeam</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logInModal">Ingresar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">Registrarse</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Productos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item disabled" href="#">Gestionar Productos</a></li>
+              <li><a class="dropdown-item disabled" href="#">Verificar existencias</a></li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Productos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              
+              <li><a class="dropdown-item" href="#">Reportar un error</a></li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    
-        <h1 class="titulos">DreamTeam Website</h1>
-    </div>
+          </li>
 
-    <form class="container-fluid">
-        <div class="form-group">
-            <div class="col-md-3 input-group-sm">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-1 mb-3 input-group-sm">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
-        </div>
-        
-        <button type="submit" class="btn btn-primary btn-sm" onclick="my()">Ingresar</button>
-      </form>
-    
-      
-    <div class="text-center">
-        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Perspiciatis, provident cupiditate ea laudantium ducimus odio? 
-            Officia, ab aspernatur, nesciunt fugiat cum quos voluptatem, 
-            nisi quaerat tenetur iste a consequuntur cupiditate.</p>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
-    
+  </nav>
+
+  <h1 class="display-1 text-center bg-gradient">DreamTeam Website</h1>
+  <!-- Carrousel with captions-->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./images/man.jpg" class="d-block w-100" alt="man.">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#signUpModal">Registrate Gratis</a>
+          </h5>
+          <p>Sumergete a este mundo!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/glasses.jpg" class="d-block w-100" alt="gafas">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Logeate!</h5>
+          <p>Ya perteneces? ingresa!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./images/office.jpg" class="d-block w-100" alt="oficina.">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Avisos Parroquiales</h5>
+          <p>Cada 8 dias</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+  <div class="text-center">
+    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Perspiciatis, provident cupiditate ea laudantium ducimus odio?
+      Officia, ab aspernatur, nesciunt fugiat cum quos voluptatem,
+      nisi quaerat tenetur iste a consequuntur cupiditate.</p>
+  </div>
+  <!--Modal Registrarse -->
+  <div class="modal" tabindex="-1" id="signUpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registrate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-signup">
+            <div class="form-group">
+              <label for="InputEmail">Direccion de Correo Electronico</label>
+              <input type="email" class="form-control" id="NewUserEmail" aria-describedby="emailHelp"
+                placeholder="Ingresa tu correo" required>
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con nadie.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPassword" placeholder="Ingresa tu contraseña"
+                required>
+            </div>
+            <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+            <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+            <br>
+            <button type="submit" class="btn btn-outline-success">Registrate</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Login -->
+  <div class="modal" tabindex="-1" id="logInModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ingresar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-logIn">
+            <div class="form-group">
+              <label for="InputEmail">Direccion de Correo Electronico</label>
+              <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
+                placeholder="Ingresa tu correo" required>
+              <small id="emailHelp" class="form-text text-muted">El Correo con el que te registraste.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="UserPassword" placeholder="Ingresa tu contraseña"
+                required>
+            </div>
+            <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+            <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+            <br>
+            <button type="submit" class="btn btn-outline-success">Registrate</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!--Conexion con Firebase -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA12E98UfraYKcCFxIoC8QyRooXnlumn1A",
+      authDomain: "ciclo3misiontic-b9088.firebaseapp.com",
+      projectId: "ciclo3misiontic-b9088",
+      storageBucket: "ciclo3misiontic-b9088.appspot.com",
+      messagingSenderId: "953197985528",
+      appId: "1:953197985528:web:8e5b859b8f4e488dd4050d",
+      measurementId: "G-QYRQFL4T7G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    //Script---------------------------------
+    const signupform = document.getElementById('form-group');
+
+    if (signupform) {
+      signupform.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('enviando')
+        console.log('prueba 123')
+        const signupEmail = document.getElementById('NewUserEmail').value;
+        const signupPassword = document.getElementById('NewUserPassword').value;
+        console.log(signupEmail, signupPassword);
+      });
+    }
+
+
+
+
+
+
+  </script>
 
 </body>
+
 </html>

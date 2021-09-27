@@ -7,8 +7,10 @@
 .form_control{
     align-self: center;
 }
-.img-fluid{
-    height: 10cm;
-    width: 10cm;
+h5{
+    color: lightblue;
 }
-
+.carousel img{
+    width: auto;
+    max-height: 800px;
+}
