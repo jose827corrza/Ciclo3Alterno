@@ -1,14 +1,4 @@
-import firebase from "firebase/app";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyA12E98UfraYKcCFxIoC8QyRooXnlumn1A",
-//   authDomain: "ciclo3misiontic-b9088.firebaseapp.com",
-//   projectId: "ciclo3misiontic-b9088",
-//   storageBucket: "ciclo3misiontic-b9088.appspot.com",
-//   messagingSenderId: "953197985528",
-//   appId: "1:953197985528:web:8e5b859b8f4e488dd4050d",
-//   measurementId: "G-QYRQFL4T7G"
-// };
 // firebaseConfig.auth().createUserWithEmailAndPassword()
 // if(signupform){
 //   signupform.addEventListener('submit', (e) => {

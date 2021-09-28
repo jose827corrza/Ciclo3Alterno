@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "firebase": "^9.1.0"
-  }
+  },
+  "name": "aparteciclo3misiontic",
+  "version": "1.0.0",
+  "main": "accionJS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jose827corrza/Ciclo3Alterno.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jose827corrza/Ciclo3Alterno/issues"
+  },
+  "homepage": "https://github.com/jose827corrza/Ciclo3Alterno#readme",
+  "description": ""
 }
