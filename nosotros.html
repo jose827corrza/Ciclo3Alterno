@@ -61,6 +61,79 @@
         </div>
     </nav>
     <h1 class="display-1 text-center bg-gradient">DreamTeam Website</h1>
+    <!--Modal Registrarse -->
+    <div class="modal" tabindex="-1" id="signUpModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup">
+                        <div class="form-group">
+                            <label for="InputEmail">Direccion de Correo Electronico</label>
+                            <input type="email" class="form-control" id="NewUserEmail" aria-describedby="emailHelp"
+                                placeholder="Ingresa tu correo" required>
+                            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con
+                                nadie.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="NewUserPassword"
+                                placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+                        <br>
+                        <button type="submit" class="btn btn-outline-success">Registrate</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Login -->
+    <div class="modal" tabindex="-1" id="logInModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ingresar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-logIn">
+                        <div class="form-group">
+                            <label for="InputEmail">Direccion de Correo Electronico</label>
+                            <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
+                                placeholder="Ingresa tu correo" required>
+                            <small id="emailHelp" class="form-text text-muted">El Correo con el que te
+                                registraste.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="UserPassword"
+                                placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+                        <br>
+                        <button type="submit" class="btn btn-outline-success">Registrate</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -70,7 +143,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 
-    
+
 </body>
 
 </html>

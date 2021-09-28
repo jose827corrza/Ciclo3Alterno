@@ -1,6 +1,4 @@
-//import getAuth from "./node_modules/@firebase";
-// import {get} from 'firebase/auth';
-// const signupform = document.getElementById('form-group');
+import firebase from "firebase/app";
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyA12E98UfraYKcCFxIoC8QyRooXnlumn1A",

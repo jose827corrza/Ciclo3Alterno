@@ -69,8 +69,9 @@
                 <img src="https://avatars.githubusercontent.com/u/84426110?v=4" class="card-img-top " alt="jose">
                 <div class="card-body">
                     <h5 class="card-title">Jose</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Ing. Electromecánico
+                        mis principales gustos son automatización y la
+                        implementación de IoT, soy de Bogotá.</p>
                     <a href="https://github.com/jose827corrza" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -78,8 +79,9 @@
                 <img src="https://avatars.githubusercontent.com/u/45669656?v=4" class="card-img-top " alt="rodrigo">
                 <div class="card-body">
                     <h5 class="card-title">Rodrigo</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Ingeniero Electronico egresado de la universidad del Valle
+                        Mi enfoque profesional es la Automatizacion Industrial
+                        Nací en Guapi Cauca.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -87,8 +89,10 @@
                 <img src="https://avatars.githubusercontent.com/u/31191628?v=4" class="card-img-top " alt="nelson">
                 <div class="card-body">
                     <h5 class="card-title">Nelson</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Ing de Petroleos e Ing de sistemas e informatica egresado de la Unal Med.
+                        Mis intereses son el desarrollo web; la ingenieria, ciencia y analitica de datos; IoT y
+                        Blockchain,
+                        Soy de Medellín</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -96,8 +100,9 @@
                 <img src="https://avatars.githubusercontent.com/u/74522423?v=4" class="card-img-top " alt="daniel">
                 <div class="card-body">
                     <h5 class="card-title">Daniel</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Biólogo egresado de la Universidad EAFIT.
+                        Mis intereses profesionales residen en la investigación y la ciencia de datos
+                        Nací en Medellín y aquí he vivido toda mi vida</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -105,13 +110,87 @@
                 <img src="./images/office.jpg" class="card-img-top " alt="carlos">
                 <div class="card-body">
                     <h5 class="card-title">Carlos</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <p class="card-text">Estudiante de ingenieria en telecomunicaciones
+                        Me gusta el desarrollo web y la ciencia de datos
+                        Soy de Santa Rosa de Osos y ahora vivo en Medellin.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
 
 
+        </div>
+    </div>
+    <!--Modal Registrarse -->
+    <div class="modal" tabindex="-1" id="signUpModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup">
+                        <div class="form-group">
+                            <label for="InputEmail">Direccion de Correo Electronico</label>
+                            <input type="email" class="form-control" id="NewUserEmail" aria-describedby="emailHelp"
+                                placeholder="Ingresa tu correo" required>
+                            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con
+                                nadie.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="NewUserPassword"
+                                placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+                        <br>
+                        <button type="submit" class="btn btn-outline-success">Registrate</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Login -->
+    <div class="modal" tabindex="-1" id="logInModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ingresar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-logIn">
+                        <div class="form-group">
+                            <label for="InputEmail">Direccion de Correo Electronico</label>
+                            <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
+                                placeholder="Ingresa tu correo" required>
+                            <small id="emailHelp" class="form-text text-muted">El Correo con el que te
+                                registraste.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="UserPassword"
+                                placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <!-- <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="NewUserPasswordConfirm" placeholder="Repite tu contraseña"
+                required>
+            </div> -->
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>-->
+                        <br>
+                        <button type="submit" class="btn btn-outline-success">Registrate</button>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
 
