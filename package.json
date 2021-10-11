@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "firebase": "^9.1.0"
+    "firebase": "^9.1.1",
+    "uuid": "^8.3.2"
   },
   "name": "aparteciclo3misiontic",
   "version": "1.0.0",

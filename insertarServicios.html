@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Servicios</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>
 
 <body>
-    <!--Navbar -->
+    <!-- Carga Cutom JS -->
+    <script src="accionJS.js"></script>
+    <script type="module" src="magiaServicios.js"></script>
+
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">DreamTeam</a>
+            <a class="navbar-brand" href="index.html">Tareas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -23,41 +28,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" href="#" id="btn-login">Ingresar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        <a class="nav-link active" href="#" id="btn-registro">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link visually-hidden" href="" id="btn-logout">Salir</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logInModal">Ingresar</a>
+                        <a class="nav-link " href="nosotros.html" id="btn-logout">Nosotros</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal"
-                            data-bs-target="#signUpModal">Registrarse</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Gestionar Productos</a></li>
-                            <li><a class="dropdown-item" href="#">Verificar existencias</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Reportar un error</a></li>
-                        </ul>
-                    </li>
-
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <a class="navbar-text dropdown" id="usrName"></a>
             </div>
         </div>
     </nav>
@@ -67,56 +50,86 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
+                <div>
+                    <figure class="figure ">
+                        <!-- https://lh3.googleusercontent.com/a-/AOh14GiRS2oxw63RYjpracqqX59_MicY5j4Aam9fo1C6Pg=s96-c -->
+                        <img src="" class="figure-img img-fluid rounded visually-hidden" alt="fotoPerfil"
+                            id="foto-perfil">
+                        <figcaption class="figure-caption" id="caption-foto"></figcaption>
+                    </figure>
+                </div>
+                <button class="btn btn-primary btn-sm visually-hidden mb-3" id="edicion-perfil">Editar mi perfil!</button>
+                <div class="form visually-hidden" id="formActualizacionDatos"> <!--Actualizacion Datos-->
+                    <label for="modificarTelefono" class="form-label">Telefono</label>
+                    <div class="col-sm-5"> <!--Telefono-->
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">
+                                <i class="bi-telephone" role="img" aria-label="telephone"></i>
+                            </span>
+                            <input type="tel" class="form-control " id="modificarTelefono"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <label for="modificarGithub" class="form-label">Github</label>
+                    <div class="col-sm-6"> <!--Github-->
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">
+                                <i class="bi-github" role="img" aria-label="GitHub"></i>
+                            </span>
+                            <input type="text" class="form-control " id="modificarGithub"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <label for="modificarUbicacion" class="form-label">Ubicacion</label>
+                    <div class="col-sm-6 mb-3"> <!--Ubicacion-->
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">
+                                <i class="bi-geo-alt-fill" role="img" aria-label="GitHub"></i>
+                            </span>
+                            <input type="text" class="form-control " id="modificarUbicacion"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <button class="btn btn-success" id="guardarCambios">Guardar Cambios</button>
+                    <button class="btn btn-secondary" id="cancelarCambios">Cancelar</button>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <label for="listaServiciosActuales" class="form-label">Servicios actualmente ofrecidos</label>
                 <ul class="list-group" id="listaServiciosActuales">
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Python
+                        <!-- <input class="form-check-input  me-1" type="checkbox" value="" aria-label="..."> -->
+                        Ejemplo
                     </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        SQL y NoSQL
-                    </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Java - Spring
-                    </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Desarrollo Web
-                    </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                        Cloud computing
-                    </li>
+
                 </ul>
-            </div>
-            <div class="col-md-4">
-                <label for="listaEliminarServicio" class="form-label">Eliminar un Servicio</label>
-                <select class="form-select form-select" aria-label=".form-select-sm example" id="listaEliminarServicio">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                  <br>
-                  <br>
-                  <br>
-                  <button class="btn btn-outline-danger" type="button" id="ButtonAgregarServicio">Eliminar</button>
             </div>
             <div class="col-md-4">
                 <div class="form">
                     <label for="anadirNuevoServicio" class="form-label">Servicio nuevo</label>
-                    <input type="email" class="form-control" id="anadirNuevoServicio" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">Escribe el nombre del nuevo servicio a ofrecer.</div>
+                    <input type="text" class="form-control" id="anadirNuevoServicio" aria-describedby="text-describer">
+                    <div id="text-describer" class="form-text">Escribe el nombre del nuevo servicio a ofrecer.</div>
                     <br>
                     <label for="descripcionNuevoServicio" class="form-label">Descripcion del Servicio</label>
                     <textarea class="form-control" rows="3" id="descripcionNuevoServicio"></textarea>
                     <br>
                     <br>
-                    <button class="btn btn-outline-success">Añadir</button>
+                    <button class="btn btn-outline-success" id="btn-anadir" type="button">Añadir</button>
+                    <hr>
+                    <div class="form" id="form-seleccion">
+                        <label for="listaEliminarServicio" class="form-label">Eliminar un Servicio</label>
+                        <select class="form-select form-select" aria-label=".form-select-sm example"
+                            id="listaEliminarServicio">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
 
-                  </div>
+
+                        </select>
+                        <br>
+                        <button class="btn btn-outline-danger" type="button" id="btn-eliminar">Eliminar</button>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -129,4 +142,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
+    <!-- Firebase SDK (Software Development Kit) siempre se debe usar y debe ser el primero de colocar -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
+
+
+    <!-- Adicionar productos de Firebase que vamos a usar -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore-compat.js"></script>
+    <!-- UUID -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+        integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
