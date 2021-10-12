@@ -2,7 +2,7 @@
 Se va a hacer del modo viejo pero que funciona, es el modo que presento
 el profesor carlos
 */
-
+//Llave unica para conectarse al proyecto en firebase
 const firebaseConfig = {
     apiKey: "AIzaSyA12E98UfraYKcCFxIoC8QyRooXnlumn1A",
     authDomain: "ciclo3misiontic-b9088.firebaseapp.com",
@@ -37,9 +37,11 @@ const pieImg = document.getElementById('caption-foto');
 const btnModPerfil = document.getElementById('edicion-perfil');
 const btnActPerfil = document.getElementById('guardarCambios');
 const btnCancelarActPerfil = document.getElementById('cancelarCambios');
+const formServicios = document.getElementById('segunda-columna');
 
 
 //Funciones
+//Configura los objetos que se muestran, carga los servicios que pertenencen al correo del usuario que ingresa
 async function login() {
     try {
         const respuesta = await auth.signInWithPopup(proveedor)
@@ -52,6 +54,7 @@ async function login() {
         pieImg.innerText = usuarioActual.displayName;
         imgProfile.src = usuarioActual.photoURL;
         btnModPerfil.classList.remove('visually-hidden');
+        formServicios.classList.remove('visually-hidden');
         console.log("Esta es la lista de servicios: -->" + listaServicios);
         pintarServiciosActuales(listaServicios);
         pintarServiciosActualesBorrar(listaServicios);
@@ -60,17 +63,17 @@ async function login() {
         throw new Error(error);
     }
 }
-
+//Esta funcion permite cerrar sesion
 function logOut() {
     auth.signOut();
 }
 
-
+//Esta es la funcion que se encarga de hacerr la lectura de los servicios de cada usuario
 async function leerServicios(usuario) {//<---Como argumento se puede meter el correo del usuario actual para que cargue solo la info del fulano
     let servicios = [];
     const resumenS = await database.collection('servicios-usuarios').where("user", "==", usuario).get();
     resumenS.forEach((doc) => {
-        //console.log(doc.id, "==>", doc.data().nombreServicio);
+        console.log(doc.id, "==>", doc.data());
         servicios.push(doc.data().nombreServicio);
 
 
@@ -78,7 +81,7 @@ async function leerServicios(usuario) {//<---Como argumento se puede meter el co
 
     return servicios;
 }
-
+//Esta funcion se encarga de "imprimir" los valores de HTML que muestran los servicios actuales del usuario
 function pintarServiciosActuales(servicios) {
     let contenidoHtml = "";
     servicios.forEach((t) => {
@@ -91,6 +94,13 @@ function pintarServiciosActuales(servicios) {
     serviciosActuales.innerHTML = contenidoHtml
 }
 
+// function pintarDatosUsuario(datos){
+//     datos.
+    
+// }
+
+
+//"imprime" el listado de los servicios que se pueden eliminar
 function pintarServiciosActualesBorrar(servicios) {
     let contenidoHtml = "";
     servicios.forEach((t) => {
@@ -100,7 +110,7 @@ function pintarServiciosActualesBorrar(servicios) {
     });
     serviciosEliminables.innerHTML = contenidoHtml
 }
-
+//Prepara las variables que se van a  guardar en el documento
 async function agregarServicio(nServicio, descrip) {
     const datos = {
         id: uuid.v4(),
@@ -114,7 +124,7 @@ async function agregarServicio(nServicio, descrip) {
     //listaServicios = await leerServicios()
     //pintar<-----
 }
-
+//Esta funcion hace el registro del documento en firestore
 async function guardarServicio(id, task) {
     try {
         const respuesta = await database.collection('servicios-usuarios').doc(id).set(task)
@@ -124,7 +134,7 @@ async function guardarServicio(id, task) {
         throw new Error(error)
     }
 }
-
+//Cada vez que esta es llamada obliga a hacer una actualizacion de los servicios
 async function actualizarDatos() {
 
     let service = await leerServicios(usuarioActual.email)
@@ -132,13 +142,13 @@ async function actualizarDatos() {
     pintarServiciosActualesBorrar(service);
 
 }
-
+//Cada vez que esta es llamada obliga a hacer una actualizacion de los servicios
 function actualizarDatosBorrado(aBorrar){// <--Aca toca meter el nombre del servicio a borrar
     let pedazoHTML = document.getElementById(aBorrar);
     serviciosActuales.removeChild(pedazoHTML);
     serviciosEliminables.removeChild(pedazoHTML);
 }
-
+//Hace la operacion de eliminar un servicio u documento que hace referencia al servicio
 async function eliminarServicio(servicioEliminar) {
     // let ss = [];
     // let comparacion;
@@ -160,6 +170,7 @@ async function eliminarServicio(servicioEliminar) {
 
 }
 
+//Esta funcion trae los valores del documento donde se almacena informacion del usuario
 async function leerDatosUsuario(usuario){
     // const recibirDatos = await database.collection('datos-usuarios').where("user", "==", usuario).get();
     // let datos = [];
@@ -185,7 +196,7 @@ async function leerDatosUsuario(usuario){
     return datos;
 }
 //Eventos
-//Login
+//Boton Login
 btnLogin.addEventListener('click', (e) => {
     login()
     btnRegistro.classList.add('visually-hidden')
@@ -193,12 +204,12 @@ btnLogin.addEventListener('click', (e) => {
 
 
 })
-//LogOut
+//Boton LogOut
 btnLogOut.addEventListener('click', () => {
     logOut()
 
 })
-//btn anadir
+//Boton anadir
 anadirServicio.addEventListener('click', (e) => {
     let titulo = anadirServicioTitulo.value;
     let descripcion = anadirServicioDescripcion.value;
@@ -215,7 +226,7 @@ anadirServicio.addEventListener('click', (e) => {
 })
 
 
-//btn Eliminar
+//Boton Eliminar
 btnEliminar.addEventListener('click', (e) => {
     e.preventDefault();
     //console.log(serviciosEliminables.value);
@@ -223,18 +234,21 @@ btnEliminar.addEventListener('click', (e) => {
     actualizarDatos();
 })
 
-//Ed. perfil
+//Boton Ed. perfil
 btnModPerfil.addEventListener('click', (e) => {
     e.preventDefault();
     document.getElementById('formActualizacionDatos').classList.remove('visually-hidden');
     let ss = leerDatosUsuario(usuarioActual.email)
     console.log(ss);
 })
-//Actualizar perfil
+//Boton actualizar perfil
 btnActPerfil.addEventListener('click', (e) => {
     e.preventDefault();
+    //let datos = await leerDatosUsuario()
+    pintarDatosUsuario(datos);
+
 })
-//Cancelar Act. perfil
+//Boton cancelar Act. perfil
 btnCancelarActPerfil.addEventListener('click', (e) => {
     e.preventDefault();
     
